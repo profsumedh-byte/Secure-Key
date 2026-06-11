@@ -81,7 +81,7 @@ function App() {
         <Navbar />
 
 
-        <div className="flex-1 bg-linear-to-r from-sky-50 to-sky-100 flex flex-col items-center py-10">
+        <div className="flex-1 bg-linear-to-r from-sky-50 to-sky-100 flex flex-col items-center px-4 sm:px-8 py-10 w-full">
 
      
           <div className="w-full max-w-md flex flex-col gap-4">
@@ -133,35 +133,37 @@ function App() {
           </div>
 
           
-          <div className="mx-20 mt-20 w-full max-w-5xl">
+          <div className="w-full max-w-5xl mt-12 sm:mt-20">
             {
               parsingarray.length > 0 ? (
-                <table className="w-full border border-gray-300">
-                  <thead>
-                    <tr className="bg-cyan-600 text-white">
-                      <th className="border px-4 py-2">Link</th>
-                      <th className="border px-4 py-2">Username</th>
-                      <th className="border px-4 py-2">Password</th>
-                      <th className="border px-4 py-2">Action</th>
-                    </tr>
-                  </thead>
+                <div className="w-full overflow-x-auto border border-gray-300 rounded-lg">
+                  <table className="w-full min-w-[600px] border-collapse">
+                    <thead>
+                      <tr className="bg-cyan-600 text-white">
+                        <th className="border px-4 py-2 text-left">Link</th>
+                        <th className="border px-4 py-2 text-left">Username</th>
+                        <th className="border px-4 py-2 text-left">Password</th>
+                        <th className="border px-4 py-2 text-left">Action</th>
+                      </tr>
+                    </thead>
 
-                  <tbody>
-                    {parsingarray.map((item, index) => (
-                      <Table_Row
-                        key={index}
-                        index={index}
-                        Link={item.Link}
-                        Username={item.Username}
-                        password={item.password}
-                        removepassword={removerow}
-                        edit_entry={edit_entry}
-                      />
-                    ))}
-                  </tbody>
-                </table>
+                    <tbody>
+                      {parsingarray.map((item, index) => (
+                        <Table_Row
+                          key={index}
+                          index={index}
+                          Link={item.Link}
+                          Username={item.Username}
+                          password={item.password}
+                          removepassword={removerow}
+                          edit_entry={edit_entry}
+                        />
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
               ) : (
-                "Nothing to show"
+                <div className="text-center text-gray-500 py-4">Nothing to show</div>
               )
             }
           </div>

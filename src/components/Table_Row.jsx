@@ -29,8 +29,8 @@ const Table_Row = (props) => {
 
     return (
         <tr>
-            <td className="border px-4 py-2">{props.Link}</td>
-            <td className="border px-4 py-2">{props.Username}</td>
+            <td className="border px-4 py-2 break-all">{props.Link}</td>
+            <td className="border px-4 py-2 break-all">{props.Username}</td>
             <td className="border px-4 py-2">
                 <div className="flex items-center justify-between">
                     <span>{showPassword ? props.password : encode()}</span>
